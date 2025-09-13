@@ -1,0 +1,295 @@
+header {
+  font-size: 14px;
+  line-height: 1.43;
+}
+header a {
+  text-decoration: none;
+  display: block;
+  color: #1c2225;
+  line-height: 1.285;
+  text-transform: uppercase;
+}
+
+/* Header */
+.header-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+}
+
+.tel-link {
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  position: relative;
+}
+.tel-link-span {
+  display: none;
+  text-transform: capitalize;
+  font-weight: 500;
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  transition: transform 1000ms linear, color 400ms ease-out 600ms;
+}
+
+.social-links-and-burger-container {
+  display: flex;
+  align-items: center;
+}
+
+.social-links-list {
+  display: flex;
+  gap: 12px;
+}
+
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 15px;
+  border: 1px solid rgba(252, 249, 249, 0.1);
+  background-color: rgba(252, 249, 249, 0.1);
+  transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out;
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: transparent;
+  border-color: #ecd979;
+}
+
+.svg-button-head {
+  border: none;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .page-header {
+    padding: 20px 0;
+  }
+
+  .menu-container {
+    width: 274px;
+    background-image: url(../img/mobmenu-back-mobile.png);
+    padding: 244px 20px 0 20px;
+  }
+
+  .close-icon {
+    right: 20px;
+  }
+
+  .nav-list {
+    gap: 20px;
+  }
+
+  .tel-link {
+    width: 158px;
+    height: 38px;
+    left: 20px;
+  }
+
+  .social-links-list {
+    margin-right: 12px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .header-container {
+    justify-content: space-between;
+  }
+
+  .close-icon {
+    stroke: #1c2225;
+    position: absolute;
+    top: 20px;
+  }
+
+  .menu-container {
+    position: fixed;
+    background-color: #ecd979;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    transform: translateX(100%);
+    transition: transform 250ms linear;
+  }
+
+  .nav-list {
+    flex-direction: column;
+  }
+
+  .nav-link {
+    text-align: right;
+  }
+
+  .tel-link {
+    border: 1px solid rgba(28, 34, 37, 0.1);
+    position: absolute;
+    top: 20px;
+  }
+  .tel-link-span {
+    color: #1c2225;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .page-header {
+    padding: 20px 0;
+  }
+
+  .menu-container {
+    width: 380px;
+    background-image: url(../img/mobmenu-back-tab.png);
+    padding: 291px 32px 0 32px;
+  }
+
+  .close-icon {
+    right: 32px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .tel-link {
+    left: 32px;
+  }
+
+  .social-links-list {
+    margin-right: 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-list {
+    gap: 25px;
+  }
+
+  .tel-link {
+    width: 193px;
+    height: 48px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .page-header {
+    padding: 26px 0;
+  }
+
+  .header-container {
+    justify-content: flex-start;
+  }
+
+  .logo {
+    margin-right: 60px;
+  }
+
+  .menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 20px;
+    flex-grow: 1;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .close-icon {
+    display: none;
+  }
+
+  .nav-link,
+  .tel-link {
+    color: #fcf9f9;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .tel-link-span {
+    color: #ecd979;
+  }
+  .nav-link:hover,
+  .nav-link:focus {
+    color: #ecd979;
+  }
+  .tel-link {
+    border: 1px solid rgba(252, 249, 249, 0.1);
+    margin-left: auto;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .tel-link:hover,
+  .tel-link:focus {
+    border-color: #ecd979;
+  }
+}
+
+/* Це для відцетровки меню при горизонтальному перегляді з телефона + щоб фонове зображення не залізало на лінки */
+
+/* При горизонтальному просмотрі з мобілок і планшетів фоновий орнамент налізає на меню + на мобілках з вузьким екраном лінки уходять за межі екрану */
+/* Як по мені перший варіант виглядає краще всіх.  */
+/* По макету не зрозуміло що робити з горизонтальним просмотром, тому знизу декілька простих варіантів вирішення проблеми */
+/* У всіх варіантах меню стає по центру екрана, щоб точно ні наяких девайсах лінки не вилізали */
+/* Закоментуй всі варіанти крім того що дивишся */
+
+/* Вариант 1: меню по ширині як на мобілках орнамент по ширині як на мобілках і трохи виглядає знизу*/
+
+@media (orientation: landscape) and (max-height: 900px) and (max-width: 1279px) {
+  .close-icon {
+    right: 20px;
+  }
+  .nav-list {
+    gap: 20px;
+  }
+  .tel-link {
+    width: 158px;
+    height: 38px;
+    left: 20px;
+  }
+  .menu-container {
+    background-image: url(../img/mobmenu-back-mobile.png);
+    width: 274px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    justify-content: flex-end;
+    background-position: top 80vh center;
+  }
+}
+
+/* Варіант 2: меню по ширині як на планшетах орнамент по ширині як на планшетах і трохи виглядає знизу */
+
+/* @media (orientation: landscape) and (max-height: 900px) and (max-width: 1279px) {
+    .menu-container {
+        display: flex;
+        align-items: center;
+        padding: 0 32px;
+        justify-content: flex-end;
+        background-position: top 80vh center;
+    }
+} */
+
+/* Варіант 3: зображення зникає при горизонтальному просмотрі */
+/* @media (orientation: landscape) and (max-height: 900px) and (max-width: 1279px) {
+    .menu-container {
+        display: flex;
+        align-items: center;
+        padding: 0 32px;
+        justify-content: flex-end;
+        background-image: none;
+    }
+} */
+
+.is-open {
+  transform: translateX(0%);
+}

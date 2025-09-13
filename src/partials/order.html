@@ -1,0 +1,69 @@
+<section class="section section-order" id="your-order">
+  <div class="img-title-container"></div>
+  <div class="section-order-padding">
+    <div class="section-style">
+      <div class="img-order-container">
+        <div class="orn-background"></div>
+        <div class="img-product-container">
+          <picture class="img-product">
+            <source
+              media="(min-width: 1280px)"
+              srcset="./img/order-im-desc.jpg 1x, ./img/order-im-desc@2x.jpg 2x"
+              width="524"
+            />
+            <source
+              media="(min-width: 768px) and (max-width: 1279px)"
+              srcset="./img/order-im-tab.jpg 1x, ./img/order-im-tab@2x.jpg 2x"
+              width="638"
+            />
+            <img src="./img/order-im-tab.jpg" alt="Product company" width="638" height="521" />
+          </picture>
+        </div>
+      </div>
+      <div class="order-form-container" id="you-order">
+        <h2 class="order-title">
+          <span class="order-title-span">Your order</span> is our priority: Personalized approach
+          and quality of service
+        </h2>
+        <form action="#" class="order-form">
+          <label for="user-name" class="visually-hidden">Name</label>
+          <input
+            type="text"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}"
+            name="user-name"
+            required
+            id="user-name"
+            class="user-input"
+            placeholder="Enter your full name"
+          />
+          <label for="user-email" class="visually-hidden">Email</label>
+          <input
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}"
+            title="Invalid email address"
+            type="email"
+            name="user-email"
+            required
+            id="user-email"
+            class="user-input"
+            placeholder="Enter your email"
+          />
+          <label for="user-comment" class="visually-hidden">Comment</label>
+          <textarea
+            name="user-comment"
+            required
+            id="user-comment"
+            rows="7"
+            class="textarea-comment user-input"
+            placeholder="Comments"
+          ></textarea>
+          <button type="submit" class="form-order-btn">
+            send
+            <svg class="icon-arrow-order" width="26" height="22">
+              <use href="./img/icons.svg#icon-arrow"></use>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
